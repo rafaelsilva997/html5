@@ -5,52 +5,50 @@ const toggleTheme = document.getElementById('dark-mode-toggle');
 const navLinks = document.querySelectorAll('.menu-item');
 const sections = document.querySelectorAll('section');
 
-// menu hamburguer mobile
+// Menu Mobile
 menuToggle.addEventListener('click', () => {
-  menu.classList.toggle('active');
+    menu.classList.toggle('active');
 });
 
-// modo claro/escuro
+// Dark/Light Mode
 if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark');
+    body.classList.add('dark');
 }
 
 toggleTheme.addEventListener('click', () => {
-  body.classList.toggle('dark');
-  localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    body.classList.toggle('dark');
+    localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
 });
 
-// scroll suave e fechar menu no mobile
+// Scroll Suave e fechar menu mobile
 navLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      window.scrollTo({
-        top: target.offsetTop - 60,
-        behavior: 'smooth'
-      });
-      if (menu.classList.contains('active')) {
-        menu.classList.remove('active');
-      }
-    }
-  });
+    link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            window.scrollTo({
+                top: target.offsetTop - 60,
+                behavior: 'smooth'
+            });
+            menu.classList.remove('active');
+        }
+    });
 });
 
-// destaque da seção ativa no menu
+// Ativar link menu conforme seção
 window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    if (scrollY >= sectionTop - section.clientHeight / 3) {
-      current = section.getAttribute('id');
-    }
-  });
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - section.clientHeight / 3) {
+            current = section.getAttribute('id');
+        }
+    });
 
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href').includes(current)) {
-      link.classList.add('active');
-    }
-  });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
+        }
+    });
 });

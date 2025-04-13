@@ -12,7 +12,6 @@
     line-height: 1.6;
   }
   
-  /* CONTAINER */
   .container {
     width: 90%;
     max-width: 1200px;
@@ -57,12 +56,10 @@
     transform: scale(1.1);
   }
   
-  /* ATIVO */
   .menu a.active {
     color: #ffcc00;
   }
   
-  /* DROPDOWN */
   .dropdown {
     position: relative;
   }
@@ -107,6 +104,11 @@
     text-align: center;
   }
   
+  .hero-img {
+    width: 120px;
+    margin-bottom: 20px;
+  }
+  
   .hero h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
@@ -117,7 +119,7 @@
     margin-bottom: 20px;
   }
   
-  .hero .btn {
+  .btn {
     background-color: #222;
     color: #fff;
     padding: 10px 25px;
@@ -126,8 +128,17 @@
     transition: 0.3s;
   }
   
-  .hero .btn:hover {
+  .btn:hover {
     background-color: #444;
+  }
+  
+  /* MINI BANNER */
+  .info-extra {
+    background-color: #222;
+    color: #ffcc00;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
   }
   
   /* DESTAQUES */
@@ -166,7 +177,7 @@
     color: #555;
   }
   
-  /* SOBRE / CONTATO */
+  /* SOBRE & CONTATO */
   .about, .contact {
     padding: 50px 20px;
     text-align: center;
@@ -186,13 +197,44 @@
     margin-top: 50px;
   }
   
+  .social img {
+    width: 30px;
+    margin: 0 5px;
+    filter: invert(1);
+    transition: 0.3s;
+  }
+  
+  .social img:hover {
+    transform: scale(1.2);
+  }
+  
+  /* BOTÃO VOLTAR TOPO */
+  .topo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: 0.3s;
+  }
+  
+  .topo:hover {
+    background-color: #ffcc00;
+    color: #222;
+  }
+  
   /* DARK MODE */
   body.dark {
     background-color: #121212;
     color: #f0f0f0;
   }
   
-  body.dark header, body.dark footer {
+  body.dark header,
+  body.dark footer {
     background-color: #1f1f1f;
   }
   
